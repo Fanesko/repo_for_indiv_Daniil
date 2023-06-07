@@ -6,4 +6,10 @@
 {% for i in childobject %}
 {{ i.title }}
 {% endfor %} 
+
+<br>
+
+<a href="{% url 'accs:viewitem' parrentobj.id %}"><b>Раскрыть</b></a>
+
+</div>
   {% endblock %}

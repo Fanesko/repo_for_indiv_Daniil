@@ -23,8 +23,9 @@
     <label for="id_image">Image:</label>
     <input type="file" name="image" accept="image/*" id="id_image" >
   </p>
-  <button  type="submit" class="btn btn-primary">Редактировать</button>
+  <button  type="submit" class="btn btn-primary">Сохранить</button>
 </form>
+
 {% if bigitem.published %}
 <form action="" method="post"> <button  class="btn btn-danger" type="submit">Скрыть </button> </form>
 {% else %}

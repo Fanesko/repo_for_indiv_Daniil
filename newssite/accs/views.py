@@ -93,9 +93,15 @@ def create_subitem(request,item_id):
 def change_subitem(request,item_id,subitem_id):
    item=get_object_or_404(Item,pk=item_id,author=request.user)
    subitem=get_object_or_404(SubItem,pk=subitem_id)
+   return render(request,'accs/change_subitem.html',{'item':item,'subitem':subitem, 'form':Change_SubItem_Form()})
 
 @login_required
 def profile(request):
    publicnews=Item.objects.filter(author=request.user,published=True)
    shadownews=Item.objects.filter(author=request.user,published=False)
    return render(request,'accs/profile.html',{'publicnews':publicnews,'shadownews':shadownews})
+
+@login_required
+def publication(request,item_id):
+   item=get_object_or_404(Item,pk=item_id,author=request.user)
+   return render(request,'accs/publication.html',{'item':item})
